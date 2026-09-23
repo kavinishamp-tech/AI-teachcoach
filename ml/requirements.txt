@@ -1,0 +1,10 @@
+bertopic
+xgboost
+scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+sentence-transformers
+umap-learn
+hdbscan

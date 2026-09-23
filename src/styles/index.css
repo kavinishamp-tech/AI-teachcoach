@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #FAF8F5;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(224, 122, 139, 0.04) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(110, 166, 133, 0.05) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(217, 130, 72, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #2D2824;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #EAE3D9;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D8CEBE;
+  }
+}
+
+@layer components {
+  /* Pastel Card Surfaces */
+  .card {
+    @apply bg-white border border-[#EAE3D9] rounded-2xl p-5 shadow-sm transition-all duration-200;
+    box-shadow: 0 2px 12px -2px rgba(45, 40, 36, 0.05);
+  }
+  .card:hover {
+    @apply border-[#D8CEBE];
+  }
+  .card-interactive {
+    @apply bg-white border border-[#EAE3D9] rounded-2xl p-5 shadow-sm transition-all duration-200 hover:border-[#6EA685] hover:-translate-y-0.5;
+    box-shadow: 0 2px 12px -2px rgba(45, 40, 36, 0.05);
+  }
+  .card-interactive:hover {
+    box-shadow: 0 6px 20px -4px rgba(45, 40, 36, 0.09);
+  }
+  
+  .section-title {
+    @apply text-[15px] font-bold text-[#2D2824] tracking-tight;
+  }
+  .section-sub {
+    @apply text-xs text-[#6E645D] mt-0.5;
+  }
+
+  /* Pastel Buttons */
+  .btn-primary {
+    @apply flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
+           bg-[#6EA685] text-white text-sm font-semibold shadow-sm
+           hover:bg-[#38664D] hover:scale-[1.01] active:scale-[0.99]
+           transition-all duration-150 cursor-pointer border-none select-none;
+    box-shadow: 0 4px 15px -3px rgba(110, 166, 133, 0.35);
+  }
+  .btn-pink {
+    @apply flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
+           bg-[#E07A8B] text-white text-sm font-semibold shadow-sm
+           hover:bg-[#B84E62] hover:scale-[1.01] active:scale-[0.99]
+           transition-all duration-150 cursor-pointer border-none select-none;
+    box-shadow: 0 4px 15px -3px rgba(224, 122, 139, 0.35);
+  }
+  .btn-secondary {
+    @apply flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
+           border border-[#EAE3D9] bg-[#F5EFEB] text-[#2D2824] text-sm font-medium
+           hover:bg-white hover:border-[#D8CEBE] active:scale-[0.99]
+           transition-all duration-150 cursor-pointer select-none;
+  }
+  .btn-ghost {
+    @apply flex items-center justify-center gap-2 px-3 py-2 rounded-xl
+           text-[#6E645D] text-sm font-medium hover:text-[#2D2824] hover:bg-[#F5EFEB]
+           transition-all duration-150 cursor-pointer select-none;
+  }
+
+  /* Pastel Input Elements */
+  .input {
+    @apply w-full px-3.5 py-2.5 border border-[#EAE3D9] rounded-xl bg-white
+           text-sm text-[#2D2824] outline-none placeholder-[#9C9289]
+           focus:border-[#6EA685] focus:ring-2 focus:ring-[#6EA685]/20 transition-all duration-150;
+  }
+
+  /* Pastel Badges */
+  .badge {
+    @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full border transition-colors;
+  }
+  .badge-sage {
+    @apply bg-[#EDF6F0] text-[#38664D] border-[#D3E8DC];
+  }
+  .badge-pink {
+    @apply bg-[#FDF2F4] text-[#B84E62] border-[#F8D7DA];
+  }
+  .badge-peach {
+    @apply bg-[#FEF3EB] text-[#A65522] border-[#FBD7BE];
+  }
+  .badge-beige {
+    @apply bg-[#F5EFEB] text-[#6E645D] border-[#EAE3D9];
+  }
+}
